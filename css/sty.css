@@ -1,0 +1,130 @@
+/* CSS Document */
+@font-face {
+  font-family: 'Roboto';
+  src: url('fonts/Roboto-Regular.ttf'); /* IE9 Compat Modes */
+  src: url('fonts/Roboto-Regular.ttf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/Roboto-Regular.ttf') format('woff'), /* Modern Browsers */
+       url('fonts/Roboto-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('fonts/Roboto-Regular.ttf') format('svg'); /* Legacy iOS */
+  src: url('fonts/Roboto-Light.ttf'); 
+}
+
+body {
+	background-color: #252525;
+	font-family: "Roboto";
+	font-size: 13px;
+	font-weight: normal;
+	color: #00aeff;
+	margin: 0px;
+	height:100%;
+}
+
+.body1{
+	position:relative;
+	float:left;
+	border: 1px solid #000;
+	width: 100%;
+    animation: fadein 0.5s;
+    -moz-animation: fadein 0.5s; /* Firefox */
+    -webkit-animation: fadein 0.5s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+}
+
+@keyframes fadein {from {opacity:0;}to {opacity:1;}}
+@-moz-keyframes fadein {from {opacity:0;margin-top:50px;}to {opacity:1;margin-top:0px;}}
+@-webkit-keyframes fadein {from {opacity:0;margin-top:50px;}to {opacity:1;margin-top:0px;}}
+@-o-keyframes fadein {from {opacity:0;margin-top:50px;}to {opacity: 1;margin-top:0px;}}
+
+.shadow	{
+	position:relative;
+	float: left;
+	background-image: url(../img/shadow1.png);
+	height: 20px;
+	width: 100%;
+	z-index: 10001;
+}
+
+tr{
+	vertical-align: top;
+	font-family: "Segoe UI";
+}
+
+input {
+	font-family: 'Roboto';
+	background-color:#2E2E2E;
+	border: solid 1px #00A4CC;
+	color:#FFF;
+	height:20px;
+	border-radius:7px;
+	padding:2px;
+	font-size:14px;
+	font-weight:100;
+}
+select{
+	font-family: 'Roboto';
+	background-color:#2E2E2E;
+	border: solid 1px #00A4CC;
+	color:#00A4CC;
+	height:25px;
+	border-radius:7px;
+	padding:2px;
+	font-size:15px;	
+}
+
+.bot_enviar {
+	cursor:pointer;
+	background-color:#123312;
+	width:120px;
+	height:30px;
+	border-radius:10px;
+}
+
+.bot_enviar:hover{
+	background-color:#72793a;
+}
+
+.bot_gral {
+	font-family: "Roboto";
+	font-size:13px;
+	font-weight:10;
+	color:#FFF;
+	cursor:pointer;
+	background-color:#00718C;
+	width:90px;
+	height:25px;
+	border:2px solid #00A4CC;
+	border-radius:12px;
+}
+
+.bot_gral:hover{
+	background-color:#00A4CC;
+}
+
+.l_tr{
+	border: 5px solid #FFF;
+	background-color:#333333;
+}
+
+.sel_col{
+	border:1px solid #0F0;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-top: 0px;
+	margin-left: -175px;
+	overflow: auto;
+	background-color:#222;
+	color:#FFF;
+	filter:alpha(opacity=70);
+	-moz-opacity:0.7;
+	-khtml-opacity: 0.7;
+	opacity: 0.7;
+	visibility:hidden;
+	z-index:100;
+	border:1px solid #39F;
+	padding:5px;
+}
+
+input.checkbox{
+	height:2px;	
+}

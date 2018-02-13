@@ -1,0 +1,123 @@
+<!doctype html>
+<html onMouseUp="oculta('sel_col')">
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<link rel="stylesheet" type="text/css" href="css/sty.css">
+</head>
+<body>
+<div id="contenedor" onMouseUp="oculta('sel_col')">
+<div id="sel_col" class="sel_col">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><input name="TIME" type="checkbox" id="TIME" onclick="filter_col()" value="time" checked></td>
+    <td>&nbsp;TIME<br></td>
+  </tr>
+  <tr>
+    <td><input name="HOURS_AGO" type="checkbox" id="HOURS_AGO" onclick="filter_col()" value="hours_ago" checked></td>
+    <td>&nbsp;HOURS_AGO</td>
+  </tr>
+  <tr>
+    <td><input name="MINUTES_AGO" type="checkbox" id="MINUTES_AGO" onclick="filter_col()" value="minutes_ago" checked></td>
+    <td>&nbsp;MINUTES_AGO</td>
+  </tr>
+  <tr>
+    <td><input name="FACTORY" type="checkbox" id="FACTORY" onclick="filter_col()" value="factory" checked></td>
+    <td>&nbsp;FACTORY</td>
+  </tr>
+</table>
+</div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="body1">
+  <tr style="cursor:pointer">
+    <td height="1" colspan="5" bgcolor="#666666"></td>
+  </tr>
+  <tr>
+    <td height="30" colspan="4" bgcolor="#2D2D2D"><img src="img/logo.png" width="314" height="70"></td>
+    <td bgcolor="#252525" class="subt"></td>
+  </tr>
+  <tr>
+    <td width="10" bgcolor="#252525" class="subt">&nbsp;</td>
+    <td width="30" height="30" bgcolor="#252525" class="subt"><i id='ico_usuario' class="fa fa-bar-chart" aria-hidden="true" style="font-size:27px"></i></td>
+    <td width="10" bgcolor="#252525" class="subt"></td>
+    <td height="30" bgcolor="#252525" class="subt">Widget Factory&nbsp;&nbsp;<i id='ico_causa' class="fa fa-chevron-circle-up" aria-hidden="true"></i></td>
+    <td width="10" bgcolor="#252525" class="subt"></td>
+  </tr>
+  <tr>
+    <td bgcolor="#252525"></td>
+    <td bgcolor="#252525"></td>
+    <td bgcolor="#252525"></td>
+    <td height="0px">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td height="5" colspan="12" bgcolor="#252525"></td>
+        </tr>
+        <tr style="font-size:10px;">
+          <td bgcolor="#252525">&nbsp;</td>
+          <td>FACTORY</td>
+          <td>&nbsp;</td>
+          <td>ELAPSED</td>
+          <td>&nbsp;</td>
+          <td>TIME UNITS</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td height="5" colspan="12" bgcolor="#252525"></td>
+        </tr>
+        <tr>
+          <td width="60" bgcolor="#252525">FILTER:</td>
+          <td width="100" bgcolor="#333" id='sel_entidades'><select name="factory" id="factory" onChange="load_res(cols);">
+            <option value="Primary" selected>PRIMARY</option>
+            <option value="Secondary">SECONDARY</option>
+          </select></td>
+          <td width="10" bgcolor="#333">&nbsp;</td>
+          <td width="40" bgcolor="#333"><input name="number" type="text" id="number" value="1" size="2" maxlength="3"></td>
+          <td width="10" bgcolor="#333">&nbsp;</td>
+          <td width="50" bgcolor="#333">
+            <select name="units" id="units" onChange="load_res(cols);">
+              <option value="1" selected>minutes</option>
+              <option value="2">hours</option>
+            </select>
+          </td>
+          <td width="10" bgcolor="#333">&nbsp;</td>
+          <td width="10" bgcolor="#333">&nbsp;</td>
+          <td width="10" bgcolor="#333">&nbsp;</td>
+          <td width="60" bgcolor="#333"><input type="button" name="button" id="button" value="FIND" class="bot_gral" onclick="load_res(cols)" /></td>
+          <td width="10" bgcolor="#333">&nbsp;</td>
+          <td bgcolor="#333">&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="12" bgcolor="#252525">&nbsp;</td>
+        </tr>
+        <tr>
+          <td height="30" colspan="12" bgcolor="#252525">
+            <div id="message" style="color:#999"><br>CLICK ON TABLE HEADER TO SHOW / HIDE COLUMNS<br><br></div>
+          	<div id='lista'></div>
+          </td>
+        </tr>
+      </table>
+      </td>
+    <td bgcolor="#252525"></td>
+  </tr>
+  <tr>
+    <td height="20" colspan="5" bgcolor="#252525"></td>
+  </tr>
+  <tr>
+    <td height="30" colspan="5" bgcolor="#252525" class="subt"></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</div>
+</body>
+</html>
+<script src="js/libreria.js"></script>
+<script src="js/behaviour.js"></script>
+<script src="data/data.json"></script>
+<script>
+	cols=['time','hours_ago','minutes_ago','factory'];
+	load_res(cols);
+</script>
